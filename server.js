@@ -7,7 +7,10 @@ const app = express();
 const port = process.env.PORT || 3000; // Usa el puerto definido en .env
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://Senaprendiz.free.nf', // Reemplaza con tu dominio real
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));
 app.use(express.json());
 
 // Configuración de la conexión a la base de datos usando variables de entorno
